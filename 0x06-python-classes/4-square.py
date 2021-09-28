@@ -1,29 +1,44 @@
 #!/usr/bin/python3
-""" creates class Square """
+
+"""
+    Classes and Objects which is a continuation of task 3
+    and adds getter and setter for the private instance
+    attribute
+"""
 
 
 class Square:
-    """ Square class"""
+    """ A Square class """
     def __init__(self, size=0):
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+        """ initialize square with a specific size
+        Args:
+            __size: size of the square
+        """
+        self.__size = size
+
+    def area(self):
+        """ compute the area of a square
+        Return:
+            the area
+        """
+        return self.__size ** 2
 
     @property
     def size(self):
+        """ getter method for the __size private instance
+            attribute
+        Return:
+            __size
+        """
         return self.__size
 
     @size.setter
     def size(self, value):
-        if type(value) != int:
+        """ setter method for the __size private instance
+            attribute
+        """
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
-
-    def area(self):
-        return self.__size * self.__size
+        self.__size = value

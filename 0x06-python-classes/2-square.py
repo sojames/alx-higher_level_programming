@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+
+"""
+    a class Square that defines a square by: (based on 1-square.py
+"""
+
+
 class Square:
     """ A Square class """
     def __init__(self, size=0):
